@@ -1,66 +1,28 @@
-## Foundry
+# Soccer Contract
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+Foundry 기반 축구 게임 Solidity 스마트 컨트랙트
 
-Foundry consists of:
+## 기술 스택
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+- **Solidity**
+- **Foundry** (빌드/테스트/배포)
 
-## Documentation
+## 프로젝트 구조
 
-https://book.getfoundry.sh/
+- `src/Soccer.sol` - 축구 게임 핵심 컨트랙트
+- `src/Counter.sol` - 카운터 컨트랙트
+- `script/` - 배포 스크립트
+- `test/` - 테스트 코드
 
-## Usage
+## 실행 방법
 
-### Build
+```bash
+# 빌드
+forge build
 
-```shell
-$ forge build
-```
+# 테스트
+forge test
 
-### Test
-
-```shell
-$ forge test
-```
-
-### Format
-
-```shell
-$ forge fmt
-```
-
-### Gas Snapshots
-
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
+# 배포
+forge script script/Deploy.s.sol --rpc-url <RPC_URL> --broadcast
 ```
